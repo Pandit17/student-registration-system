@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Student Registration System — add, edit, delete and persist student records with validation. Pure HTML, CSS and JS." />
+  <title>Student Registration System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell">
+      <nav class="nav">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">🎓</span>
+          <span class="brand-text">Regi<span class="accent">Stud</span></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#form">Register</a></li>
+          <li><a href="#records">Records</a></li>
+          <li><button id="clearAllBtn" class="btn btn-soft danger">Clear All</button></li>
+        </ul>
+      </nav>
+
+      <div class="hero">
+        <h1>Student Registration System</h1>
+        <p class="lead">
+          Add, edit, delete and search student records. Fully responsive and powered by
+          vanilla JavaScript with localStorage persistence.
+        </p>
+        <a class="btn btn-primary" href="#form">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="form" class="section">
+      <div class="shell">
+        <div class="grid two">
+          <article class="card form-card">
+            <header class="card-header">
+              <h2 id="formTitle">Register a Student</h2>
+              <p class="muted">Fields marked <span aria-hidden="true" class="req">*</span> are required.</p>
+            </header>
+
+            <form id="studentForm" novalidate>
+              <div class="field">
+                <label for="studentName">Student Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="studentName" name="studentName" type="text" placeholder="e.g., Aditi Sharma" autocomplete="name" maxlength="60" required inputmode="text" />
+                <small class="hint">Only letters and spaces, 2–60 chars.</small>
+                <small class="error" id="nameError" aria-live="polite"></small>
+              </div>
+
+              <div class="field">
+                <label for="studentId">Student ID <span class="req" aria-hidden="true">*</span></label>
+                <input id="studentId" name="studentId" type="text" placeholder="e.g., 20250037" autocomplete="off" required inputmode="numeric" />
+                <small class="hint">Digits only. Must be unique.</small>
+                <small class="error" id="idError" aria-live="polite"></small>
+              </div>
+
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" placeholder="e.g., aditi@example.com" autocomplete="email" required />
+                <small class="hint">Use a valid email format.</small>
+                <small class="error" id="emailError" aria-live="polite"></small>
+              </div>
+
+              <div class="field">
+                <label for="contact">Contact Number <span class="req" aria-hidden="true">*</span></label>
+                <input id="contact" name="contact" type="tel" placeholder="e.g., 9876543210" autocomplete="tel" required inputmode="numeric" />
+                <small class="hint">Digits only, at least 10.</small>
+                <small class="error" id="contactError" aria-live="polite"></small>
+              </div>
+
+              <div class="actions">
+                <button id="submitBtn" class="btn btn-primary" type="submit">Add Student</button>
+                <button id="resetBtn" class="btn btn-soft" type="reset">Reset</button>
+              </div>
+
+              <div class="sr-only" aria-live="polite" id="ariaStatus"></div>
+            </form>
+          </article>
+
+          <aside class="card tips">
+            <h3>Quick Tips</h3>
+            <ul>
+              <li>IDs and Contact Numbers accept digits only.</li>
+              <li>Emails are validated before saving.</li>
+              <li>Click the <strong>Edit</strong> icon to update a record.</li>
+              <li>Click the <strong>Delete</strong> icon to remove a record.</li>
+              <li>All data persists in your browser even after refresh.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="records" class="section alt">
+      <div class="shell">
+        <header class="section-header">
+          <h2>Registered Students</h2>
+          <div class="toolbar">
+            <input id="search" class="search" type="search" placeholder="Search by name or ID…" aria-label="Search records" />
+            <span class="count" id="countBadge">0</span>
+          </div>
+        </header>
+
+        <div class="card">
+          <div id="tableWrapper" class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Student ID</th>
+                  <th>Email</th>
+                  <th>Contact No.</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- rows injected by JS -->
+              </tbody>
+            </table>
+          </div>
+          <footer class="card-footer">
+            <small class="muted">A vertical scrollbar appears automatically when records grow.</small>
+          </footer>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>Built with ❤️ using pure <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>. Data stored locally in your browser.</p>
+      <p class="tiny">© <span id="year"></span> RegiStud — Demo project for academic use.</p>
+    </div>
+  </footer>
+</body>
+</html>
