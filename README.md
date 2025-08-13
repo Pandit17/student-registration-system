@@ -2,6 +2,11 @@
 
 A clean, responsive, and shiny-looking student registration system that lets you add, edit, delete, search, and persist records using `localStorage`.
 
+## Live Demo
+
+Try the working project instantly without downloading:  
+[https://pandit17.github.io/student-registration-system/](https://pandit17.github.io/student-registration-system/)
+
 ## Features
 - ✅ Add / Edit / Delete records
 - ✅ Validations
