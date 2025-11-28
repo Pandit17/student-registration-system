@@ -1,25 +1,25 @@
-# Student Registration System (Pure HTML/CSS/JS)
+# RegiStud 
 
 A clean, responsive, and shiny-looking student registration system that lets you add, edit, delete, search, and persist records using `localStorage`.
 
 ## Live Demo
 
 Try the working project instantly without downloading:  
-[https://pandit17.github.io/student-registration-system/](https://pandit17.github.io/student-registration-system/)
+[https://pandit17.github.io/RegiStud/](https://pandit17.github.io/RegiStud/)
 
 ## Features
-- ✅ Add / Edit / Delete records
-- ✅ Validations
+- Add / Edit / Delete records
+- Validations
   - Name: letters + spaces (2–60)
   - Student ID: digits only, unique
   - Email: valid format
   - Contact: digits only, at least 10
-- ✅ Prevents empty rows
-- ✅ Records persist across refresh (localStorage)
-- ✅ Dynamic vertical scrollbar for the table (JS toggles when rows > 7)
-- ✅ Fully responsive (mobile ≤640px, tablet 641–1024px, desktop ≥1025px)
-- ✅ Semantic HTML and accessible labels with `aria-live` updates
-- ✅ Pure HTML, CSS, JS (no frameworks)
+- Prevents empty rows
+- Records persist across refresh (localStorage)
+- Dynamic vertical scrollbar for the table (JS toggles when rows > 7)
+- Fully responsive (mobile ≤640px, tablet 641–1024px, desktop ≥1025px)
+- Semantic HTML and accessible labels with `aria-live` updates
+- Pure HTML, CSS, JS (no frameworks)
 
 ## Getting Started
 Just open `index.html` in your browser.
